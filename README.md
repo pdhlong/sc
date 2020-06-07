@@ -4,11 +4,11 @@
 
 * Automatic Speaker Recognition algorithms in Python
 
-* This repository contains Python programs that can be used for Automatic Speaker Recognition. ASR is done by extracting MFCCs and LPCs from each speaker and then forming a speaker-specific codebook
+ This repository contains Python programs that can be used for Automatic Speaker Recognition. ASR is done by extracting MFCCs and LPCs from each speaker and then forming a speaker-specific codebook
 of the same by using Vector Quantization (I like to think of it as a fancy name for NN-clustering). 
 After that, the system is trained and tested for 8 different speakers. 
 
-* Create virtualenv with:
+ Create virtualenv with:
 
 	virtualenv -p python3 .env
 	. .env/bin/activate
