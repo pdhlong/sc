@@ -19,7 +19,7 @@ Everything is included in the repository, including .wav files for testing and t
 
 * Add record function: The algorithm will start by recording the sound from your microphone (6 seconds long). After the testing you will need to delete the s1 file in test folder just type test\s1.wav when it asked u to enter filename.
 
-### Group7.The sound files in the train folder belongs to the following members:
+### Group7. The sound files in the train folder belongs to the following members:
 * s1-random sound :)
 * s2-Huong Giang
 * s3-Hai Long
