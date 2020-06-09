@@ -15,14 +15,14 @@ from scipy.io.wavfile import write
 
 fs=44100
 second=6
-#print("recording...")
-#record_voice=sounddevice.rec(int(second * fs), samplerate=fs,channels=2)
-#sounddevice.wait()
-#write("s1.wav",fs,record_voice)
-#newPath = shutil.move('s1.wav', 'test')
+print("recording...")
+record_voice=sounddevice.rec(int(second * fs), samplerate=fs,channels=2)
+sounddevice.wait()
+write("s1.wav",fs,record_voice)
+newPath = shutil.move('s1.wav', 'test')
 
 
-nSpeaker = 8
+nSpeaker = 1
 nfiltbank = 12
 orderLPC = 15
 (codebooks_mfcc, codebooks_lpc) = training(nfiltbank, orderLPC)
@@ -69,7 +69,6 @@ print('Accuracy of result for training with MFCC is ', percentageCorrect_MFCC, '
 percentageCorrect_LPC = (nCorrect_LPC/nSpeaker)*100
 print('Accuracy of result for training with LPC is ', percentageCorrect_LPC, '%')
 
-    
     
 file_path = input("Enter filename:- ")
 if os.path.exists(file_path):

@@ -46,29 +46,29 @@ def training(nfiltbank, orderLPC):
             plt.axis(ymin = -1, ymax = 1)
             plt.xlabel('Number of features')
     
-    plt.show()
+    #plt.show()
     print('Training complete')
     
     #plotting 5th and 6th dimension MFCC features on a 2D plane
     #comment lines 54 to 71 if you don't want to see codebook
-    codebooks = np.empty((2, nfiltbank, nCentroid))
-    mel_coeff = np.empty((2, nfiltbank, 68))
+    #codebooks = np.empty((2, nfiltbank, nCentroid))
+    m#el_coeff = np.empty((2, nfiltbank, 68))
    
-    for i in range(2):
-        fname = '/s' + str(i+2) + '.wav'
-        (fs,s) = read(directory + fname)
-        mel_coeff[i,:,:] = mfcc(s, fs, nfiltbank)[:,0:68]
-        codebooks[i,:,:] = lbg(mel_coeff[i,:,:], nCentroid)
+    #for i in range(2):
+    #    fname = '/s' + str(i+2) + '.wav'
+    #    (fs,s) = read(directory + fname)
+    #    mel_coeff[i,:,:] = mfcc(s, fs, nfiltbank)[:,0:68]
+    #    codebooks[i,:,:] = lbg(mel_coeff[i,:,:], nCentroid)
         
     
-    plt.figure(nSpeaker + 1)
-    s1 = plt.scatter(mel_coeff[0,6,:], mel_coeff[0,4,:],s = 100,  color = 'r', marker = 'o')
-    c1 = plt.scatter(codebooks[0,6,:], codebooks[0,4,:], s = 100, color = 'r', marker = '+')
-    s2 = plt.scatter(mel_coeff[1,6,:], mel_coeff[1,4,:],s = 100,  color = 'b', marker = 'o')
-    c2 = plt.scatter(codebooks[1,6,:], codebooks[1,4,:], s = 100, color = 'b', marker = '+')
-    plt.grid()
-    plt.legend((s1, s2, c1, c2), ('Sp1','Sp2','Sp1 centroids', 'Sp2 centroids'), scatterpoints = 1, loc = 'upper left')    
-    plt.show()
+    #plt.figure(nSpeaker + 1)
+    #s1 = plt.scatter(mel_coeff[0,6,:], mel_coeff[0,4,:],s = 100,  color = 'r', marker = 'o')
+    #c1 = plt.scatter(codebooks[0,6,:], codebooks[0,4,:], s = 100, color = 'r', marker = '+')
+    #s2 = plt.scatter(mel_coeff[1,6,:], mel_coeff[1,4,:],s = 100,  color = 'b', marker = 'o')
+    #c2 = plt.scatter(codebooks[1,6,:], codebooks[1,4,:], s = 100, color = 'b', marker = '+')
+    #plt.grid()
+    #plt.legend((s1, s2, c1, c2), ('Sp1','Sp2','Sp1 centroids', 'Sp2 centroids'), scatterpoints = 1, loc = 'upper left')    
+    #plt.show()
    
     
     return (codebooks_mfcc, codebooks_lpc)

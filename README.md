@@ -26,5 +26,5 @@ Everything is included in the repository, including .wav files for testing and t
 * s4-Long Vu
 * s5-Ba Cuong
 * s6-Minh Phuc
-* s7-2T
+* s7-Cong Thanh
 * s8-Minh Hoang
