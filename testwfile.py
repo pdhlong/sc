@@ -15,14 +15,14 @@ from scipy.io.wavfile import write
 
 fs=44100
 second=6
-print("recording...")
-record_voice=sounddevice.rec(int(second * fs), samplerate=fs,channels=2)
-sounddevice.wait()
-write("s1.wav",fs,record_voice)
-newPath = shutil.move('s1.wav', 'test')
+#print("recording...")
+#record_voice=sounddevice.rec(int(second * fs), samplerate=fs,channels=2)
+#sounddevice.wait()
+#write("s1.wav",fs,record_voice)
+#newPath = shutil.move('s1.wav', 'test')
 
 
-nSpeaker = 1
+nSpeaker = 8
 nfiltbank = 12
 orderLPC = 15
 (codebooks_mfcc, codebooks_lpc) = training(nfiltbank, orderLPC)
@@ -58,23 +58,23 @@ for i in range(nSpeaker):
     print('Speaker ', (i+1), ' in test matches with speaker ', (sp_lpc+1), ' in train for training with LPC')
     
     
-#    if i == sp_mfcc:
-#        nCorrect_MFCC += 1
-#    if i == sp_lpc:
-#        nCorrect_LPC += 1
+    if i == sp_mfcc:
+        nCorrect_MFCC += 1
+    if i == sp_lpc:
+        nCorrect_LPC += 1
     
 
-#percentageCorrect_MFCC = (nCorrect_MFCC/nSpeaker)*100
-#print('Accuracy of result for training with MFCC is ', percentageCorrect_MFCC, '%')
-#percentageCorrect_LPC = (nCorrect_LPC/nSpeaker)*100
-#print('Accuracy of result for training with LPC is ', percentageCorrect_LPC, '%')
+percentageCorrect_MFCC = (nCorrect_MFCC/nSpeaker)*100
+print('Accuracy of result for training with MFCC is ', percentageCorrect_MFCC, '%')
+percentageCorrect_LPC = (nCorrect_LPC/nSpeaker)*100
+print('Accuracy of result for training with LPC is ', percentageCorrect_LPC, '%')
 
-# Remove the recorded file to the test next time    
-file_path = input("Enter filename:- ")
-if os.path.exists(file_path):
-    os.remove(file_path)
-else:
-    print("File not found in the directory")
+    
+#file_path = input("Enter filename:- ")
+#if os.path.exists(file_path):
+#    os.remove(file_path)
+#else:
+#    print("File not found in the directory")
 
    
     
