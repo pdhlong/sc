@@ -52,7 +52,7 @@ def training(nfiltbank, orderLPC):
     #plotting 5th and 6th dimension MFCC features on a 2D plane
     #comment lines 54 to 71 if you don't want to see codebook
     #codebooks = np.empty((2, nfiltbank, nCentroid))
-    m#el_coeff = np.empty((2, nfiltbank, 68))
+    #el_coeff = np.empty((2, nfiltbank, 68))
    
     #for i in range(2):
     #    fname = '/s' + str(i+2) + '.wav'
